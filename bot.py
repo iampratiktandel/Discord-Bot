@@ -44,4 +44,8 @@ async def _8ball(ctx, *, question):
               'You may rely on it.']
   await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
 
+@client.command()
+async def clear(ctx, amount=5):
+  await ctx.channel.purge(limit=amount)
+  
 client.run('Token goes here')
