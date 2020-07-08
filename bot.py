@@ -7,4 +7,12 @@ client = commands.Bot(command_prefix = '.')
 async def on_ready():
   print('Bot is ready.')
 
-client.run('NzMwNDIxOTAwMDI2NzA4MDA5.XwXVzQ.C9Ja0MsLNZiZp8dE2pe6z1HN-Ww')
+@client.event
+async def on_member_join(member):
+  print(f'{member} has joined the server.')
+
+@client.event
+async def on_member_remove(member):
+  print(f'{member} has left the server.')
+
+client.run('Token goes Here')
